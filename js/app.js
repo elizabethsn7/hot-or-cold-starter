@@ -30,11 +30,18 @@ $(document).ready(function(){
   		newGame();
   		console.log('Is this working?');
 
-
-  	})
+    $('.button').click(function() {
+      event.preventDefault();
+      guesses = $('#userGuess').val();
+      guessAmount += 1;
+      $('#count').text(guessAmount);
+      $('#guessList').append('<li>' + guesses + '</li>');
+    
+    });
 
         });
 
+});
 
 
 
