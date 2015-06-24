@@ -23,14 +23,10 @@ $(document).ready(function(){
 	}
 
   	var newGame=function() {
-  		$('#guessList li')
+  		$('#guessList li').hide();
   	}
 
-  	$('new').click(function() {
-  		newGame();
-  		console.log('Is this working?');
-
-    $('.button').click(function() {
+    $('form').submit(function(event) {
       event.preventDefault();
       guesses = $('#userGuess').val();
       guessAmount += 1;
