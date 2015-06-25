@@ -1,5 +1,4 @@
- 
-$(document).ready(function(){
+ $(document).ready(function(){
 	
 	/*--- Display information modal box ---*/
   	$(".what").click(function(){
@@ -12,32 +11,48 @@ $(document).ready(function(){
   		$(".overlay").fadeOut(1000);
   	});
 
-	var randNum;
-	var guessAmount = 0;
-	var guesses;
 
 
-	var hiddenRandNum = function() {
-		randNum = Math.ceil(Math.random()*100);
-		return randNum;
-	}
-
-  	var newGame=function() {
-  		$('#guessList li').hide();
-  	}
-
+  var newGame = function() {
+    var guessAmount = 0;
+    var guesses;
+  
+    randNum = Math.ceil(Math.random()*100 + 1);
+    console.log(randNum);
+  
+  $('#guessList li').hide();
+  
     $('form').submit(function(event) {
       event.preventDefault();
       guesses = $('#userGuess').val();
-      guessAmount += 1;
+      
+      if (guessAmount >= userGuess) {
+        return ("You're too high");
+        console.log("You're too high!");
+
+      } else if (guessAmount <= userGuess) {
+        console.log("Why you be so low");
+
+      }
+
+      console.log(guesses);
+
+      guessAmount++;
+      console.log(guessAmount);
       $('#count').text(guessAmount);
       $('#guessList').append('<li>' + guesses + '</li>');
-    
-    });
+     
+     });
+    } 
 
-        });
+    newGame();
 
-});
+   });
+
+
+
+ 
+
 
 
 
