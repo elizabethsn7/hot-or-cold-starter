@@ -24,26 +24,42 @@
   
     $('form').submit(function(event) {
       event.preventDefault();
-      userGuess = $('#userGuess').val();
+      var userGuess = $('#userGuess').val();
       console.log(userGuess);
 
 
       if (randNum == userGuess) {
         console.log('equals number')
       }
-      else if (randNum - 19 >= userGuess || randNum - 1 >= userGuess) {
-        console.log("You're too low!");
+      else if (randNum - 99 >= userGuess) {
+        console.log('You cool baby, real cool');
       }
-      else if (randNum - 40 >= userGuess || randNum - 20 >= userGuess) {
-        console.log("You're way too low!");
+      else if (randNum - 75 >= userGuess) {
+        console.log('You\'re cold, ice cold!');
       }
-      else if (randNum + 1 <= userGuess) {
-        console.log("Why you be so high");
+      else if (randNum - 50 >= userGuess) {
+        console.log('You\'re warmish but not really');
       }
-      else if (randNum + 30 <= userGuess) {
-        console.log("Why you be way too high");
-
-
+      else if (randNum - 25 >= userGuess) {
+        console.log('You\'re warm...ish');
+      }
+      else if (randNum - 1 >= userGuess) {
+        console.log('Ouch! Fire');
+      }
+      else if (randNum + 1 >= userGuess) {
+         console.log('You so hot you on fire!');
+      }
+      else if (randNum + 25 >= userGuess) {
+       console.log('There\'s a cool breeze');
+      }
+      else if (randNum + 50 >= userGuess) {
+       console.log('Ice Ice Baby, too cold but your warmer than Elsa');
+      }
+      else if (randNum + 75 >= userGuess) {
+       console.log('Let it go...It\'s frozen');
+      }
+      else if (randNum + 99 >= userGuess) {
+       console.log('You have entered Antartica');
       }
 
       guessAmount++;
@@ -51,10 +67,10 @@
       $('#count').text(guessAmount);
       $('#guessList').append('<li>' + userGuess + '</li>');
      
-     });
-    } 
-
+     }); 
+    }
     newGame();
+    
 
    });
 
