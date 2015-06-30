@@ -17,7 +17,7 @@
     var guessAmount = 0;
     var guesses;
   
-    var randNum = Math.ceil(Math.random()*100 + 1);
+    var randNum = Math.ceil(Math.random()*100);
     console.log(randNum);
   
   $('#guessList li').hide();
@@ -29,7 +29,9 @@
 
 
       if (randNum == userGuess) {
-        console.log('equals number')
+        setFeedback('You Win');
+        finish = true;
+        console.log('equals number');
       }
       else if (randNum - 99 >= userGuess) {
         console.log('You cool baby, real cool');
@@ -67,7 +69,10 @@
       $('#count').text(guessAmount);
       $('#guessList').append('<li>' + userGuess + '</li>');
      
-     }); 
+     });
+     $('.new').click(function() {
+      newGame();
+     }) 
     }
     newGame();
     
