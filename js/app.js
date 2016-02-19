@@ -37,38 +37,38 @@
         $('#userGuess').val('');
 
         if (randNum == userGuess) {
-          $('#feedback').text('you win');
+          $('#feedback').text('You Win!');
           console.log('equals number');
         }
         else if (randNum - 99 >= userGuess) {
-          console.log('You cool baby, real cool');
+          // $('#feedback').text('You cool baby, real cool');
         }
         else if (randNum - 75 >= userGuess) {
-          console.log('You\'re cold, ice cold!');
+          $('#feedback').text('You cool baby, real cool');
         }
         else if (randNum - 50 >= userGuess) {
-          console.log('You\'re warmish but not really');
+          $('#feedback').text('You\'re warmish but not really');
         }
         else if (randNum - 25 >= userGuess) {
-          console.log('You\'re warm...ish');
+          $('#feedback').text('You\'re warm...ish');
         }
         else if (randNum - 1 >= userGuess) {
-          console.log('Ouch! Fire');
+          $('#feedback').text('Ouch! Fire');
         }
         else if (randNum + 1 >= userGuess) {
-           console.log('You so hot you on fire!');
+           $('#feedback').text('You so hot you on fire!');
         }
         else if (randNum + 25 >= userGuess) {
-         console.log('There\'s a cool breeze');
+         $('#feedback').text('There\'s a cool breeze');
         }
         else if (randNum + 50 >= userGuess) {
-         console.log('Ice Ice Baby, too cold but your warmer than Elsa');
+         $('#feedback').text('Ice Ice Baby, too cold but your warmer than Elsa');
         }
         else if (randNum + 75 >= userGuess) {
-         console.log('Let it go...It\'s frozen');
+         $('#feedback').text('Let it go...It\'s frozen');
         }
         else if (randNum + 99 >= userGuess) {
-         console.log('You have entered Antartica');
+         $('#feedback').text('You have entered Antartica');
         }
       } 
       else { 
@@ -84,6 +84,7 @@
   $('.new').click(function() {
     newGame();
     $('#feedback').text('Make Your Guess');
+    $('#count').text('0')
   });
 
   newGame();
